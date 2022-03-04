@@ -1,3 +1,7 @@
+//
+// Code by Ola Wistedt
+//
+
 #include "o808.h"
 #include "IPlug_include_in_plug_src.h"
 
