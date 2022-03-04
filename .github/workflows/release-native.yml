@@ -7,7 +7,7 @@ on:
       - "v*"
 
 env:
-  PROJECT_NAME: TemplateProject
+  PROJECT_NAME: o808
 
 jobs:
   create_release:

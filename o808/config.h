@@ -1,7 +1,7 @@
 #define PLUG_NAME "o808"
 #define PLUG_MFR "Witech"
-#define PLUG_VERSION_HEX 0x00000100
-#define PLUG_VERSION_STR "0.1.0"
+#define PLUG_VERSION_HEX 0x00000200
+#define PLUG_VERSION_STR "0.2.0"
 #define PLUG_UNIQUE_ID 'MMCW'
 #define PLUG_MFR_ID 'Acme'
 #define PLUG_URL_STR "https://iplug2.github.io"
