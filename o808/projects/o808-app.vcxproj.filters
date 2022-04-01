@@ -77,6 +77,42 @@
     <ClCompile Include="..\..\iPlug2\IGraphics\Drawing\IGraphicsSkia.cpp">
       <Filter>IGraphics\Drawing</Filter>
     </ClCompile>
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\BridgedTNetwork.cpp">
+      <Filter>808 source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\FeedbackBuffer.cpp">
+      <Filter>808 source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\LevelStage.cpp">
+      <Filter>808 source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\OutputStage.cpp">
+      <Filter>808 source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\PulseShaper.cpp">
+      <Filter>808 source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\RetriggeringPulse.cpp">
+      <Filter>808 source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\ToneStage.cpp">
+      <Filter>808 source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\TriggerLogic.cpp">
+      <Filter>808 source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\va808-bass-drum\Source\Overdrive.cpp">
+      <Filter>808 source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\va808-bass-drum\Source\VA808BassDrum.cpp">
+      <Filter>808 source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iPlug2\IPlug\Extras\Synth\MidiSynth.cpp">
+      <Filter>IPlug\Extras\Synth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\iPlug2\IPlug\Extras\Synth\VoiceAllocator.cpp">
+      <Filter>IPlug\Extras\Synth</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\o808.h" />
@@ -258,6 +294,55 @@
     <ClInclude Include="..\..\iPlug2\IGraphics\ISender.h">
       <Filter>IGraphics</Filter>
     </ClInclude>
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\BridgedTNetwork.h">
+      <Filter>808 source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\FeedbackBuffer.h">
+      <Filter>808 source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\LevelStage.h">
+      <Filter>808 source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\OutputStage.h">
+      <Filter>808 source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\PulseShaper.h">
+      <Filter>808 source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\RetriggeringPulse.h">
+      <Filter>808 source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\ToneStage.h">
+      <Filter>808 source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\TriggerLogic.h">
+      <Filter>808 source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\va808-bass-drum\Source\Overdrive.h">
+      <Filter>808 source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\BridgedTComponents\FeedbackBufferInput.h">
+      <Filter>808 source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\BridgedTComponents\PulseShaperInput.h">
+      <Filter>808 source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\BridgedTComponents\RetriggeringPulseInput.h">
+      <Filter>808 source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\o808_DSP.h" />
+    <ClInclude Include="..\..\iPlug2\IPlug\Extras\Synth\ControlRamp.h">
+      <Filter>IPlug\Extras\Synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\iPlug2\IPlug\Extras\Synth\MidiSynth.h">
+      <Filter>IPlug\Extras\Synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\iPlug2\IPlug\Extras\Synth\SynthVoice.h">
+      <Filter>IPlug\Extras\Synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\iPlug2\IPlug\Extras\Synth\VoiceAllocator.h">
+      <Filter>IPlug\Extras\Synth</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="resources">
@@ -289,6 +374,15 @@
     </Filter>
     <Filter Include="IPlug\APP\RTAudioMidi\include">
       <UniqueIdentifier>{649c5de3-b4c2-4de9-8d57-3b1762646259}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="808 source">
+      <UniqueIdentifier>{ad48a7b4-6495-4bb0-bbb5-cd71fc1f6a75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IPlug\Extras">
+      <UniqueIdentifier>{01d09a0b-1baa-4321-b0c4-e312d1f01d41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IPlug\Extras\Synth">
+      <UniqueIdentifier>{1f594694-7ce0-494e-9eb7-dc7a774c4719}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

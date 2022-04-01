@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="kUFzkO" name="VA808BassDrum" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              pluginManufacturer="Cameron Smith" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn">
+  <MAINGROUP id="HBmwt3" name="VA808BassDrum">
+    <GROUP id="{FF06041E-A874-535D-DEFC-43B3131A03DA}" name="Source">
+      <FILE id="cqaLq0" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="U7SocX" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="YVqaxp" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <FILE id="FgrGOm" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="TFzeKl" name="DrumSynthesiser.h" compile="0" resource="0"
+            file="Source/DrumSynthesiser.h"/>
+      <FILE id="Dif4Ux" name="DrumSynthesiser.cpp" compile="1" resource="0"
+            file="Source/DrumSynthesiser.cpp"/>
+      <FILE id="dalEC3" name="VA808BassDrum.h" compile="0" resource="0" file="Source/VA808BassDrum.h"/>
+      <FILE id="FizHCY" name="VA808BassDrum.cpp" compile="1" resource="0"
+            file="Source/VA808BassDrum.cpp"/>
+      <FILE id="m6bl2Z" name="Overdrive.h" compile="0" resource="0" file="Source/Overdrive.h"/>
+      <FILE id="RRl00z" name="Overdrive.cpp" compile="1" resource="0" file="Source/Overdrive.cpp"/>
+      <GROUP id="{9F128DD3-320A-1302-3462-3FB9774C164E}" name="VA808Components">
+        <GROUP id="{278F5AD6-F448-2065-0648-1795141D9723}" name="BridgedTComponents">
+          <FILE id="Lj8S2i" name="FeedbackBufferInput.h" compile="0" resource="0"
+                file="Source/VA808Components/BridgedTComponents/FeedbackBufferInput.h"/>
+          <FILE id="j9xNh8" name="PulseShaperInput.h" compile="0" resource="0"
+                file="Source/VA808Components/BridgedTComponents/PulseShaperInput.h"/>
+          <FILE id="vWe5AJ" name="RetriggeringPulseInput.h" compile="0" resource="0"
+                file="Source/VA808Components/BridgedTComponents/RetriggeringPulseInput.h"/>
+        </GROUP>
+        <FILE id="fkbgMz" name="BridgedTNetwork.cpp" compile="1" resource="0"
+              file="Source/VA808Components/BridgedTNetwork.cpp"/>
+        <FILE id="rrArco" name="BridgedTNetwork.h" compile="0" resource="0"
+              file="Source/VA808Components/BridgedTNetwork.h"/>
+        <FILE id="cKFtm9" name="FeedbackBuffer.cpp" compile="1" resource="0"
+              file="Source/VA808Components/FeedbackBuffer.cpp"/>
+        <FILE id="ujx2v6" name="FeedbackBuffer.h" compile="0" resource="0"
+              file="Source/VA808Components/FeedbackBuffer.h"/>
+        <FILE id="xLWfUy" name="LevelStage.cpp" compile="1" resource="0" file="Source/VA808Components/LevelStage.cpp"/>
+        <FILE id="qI3gzR" name="LevelStage.h" compile="0" resource="0" file="Source/VA808Components/LevelStage.h"/>
+        <FILE id="FthMT5" name="OutputStage.cpp" compile="1" resource="0" file="Source/VA808Components/OutputStage.cpp"/>
+        <FILE id="Q1xYSt" name="OutputStage.h" compile="0" resource="0" file="Source/VA808Components/OutputStage.h"/>
+        <FILE id="GAdDGG" name="PulseShaper.cpp" compile="1" resource="0" file="Source/VA808Components/PulseShaper.cpp"/>
+        <FILE id="Y65ssw" name="PulseShaper.h" compile="0" resource="0" file="Source/VA808Components/PulseShaper.h"/>
+        <FILE id="mM2aWL" name="RetriggeringPulse.cpp" compile="1" resource="0"
+              file="Source/VA808Components/RetriggeringPulse.cpp"/>
+        <FILE id="N8qlBB" name="RetriggeringPulse.h" compile="0" resource="0"
+              file="Source/VA808Components/RetriggeringPulse.h"/>
+        <FILE id="j1nSoR" name="ToneStage.cpp" compile="1" resource="0" file="Source/VA808Components/ToneStage.cpp"/>
+        <FILE id="yeVipa" name="ToneStage.h" compile="0" resource="0" file="Source/VA808Components/ToneStage.h"/>
+        <FILE id="E2QLCz" name="TriggerLogic.cpp" compile="1" resource="0"
+              file="Source/VA808Components/TriggerLogic.cpp"/>
+        <FILE id="IeZw9M" name="TriggerLogic.h" compile="0" resource="0" file="Source/VA808Components/TriggerLogic.h"/>
+      </GROUP>
+      <GROUP id="{5624D264-1250-D9C3-9ED6-F6E9561104FC}" name="GUIComponents">
+        <FILE id="aHfQ31" name="CustomDial.cpp" compile="1" resource="0" file="Source/GUIComponents/CustomDial.cpp"/>
+        <FILE id="yogqEC" name="CustomDial.h" compile="0" resource="0" file="Source/GUIComponents/CustomDial.h"/>
+        <FILE id="c1xxHu" name="Background.h" compile="0" resource="0" file="Source/GUIComponents/Background.h"/>
+        <FILE id="etm7Be" name="Background.cpp" compile="1" resource="0" file="Source/GUIComponents/Background.cpp"/>
+        <FILE id="eEzLUM" name="CustomButton.h" compile="0" resource="0" file="Source/GUIComponents/CustomButton.h"/>
+        <FILE id="wLCk1L" name="CustomButton.cpp" compile="1" resource="0"
+              file="Source/GUIComponents/CustomButton.cpp"/>
+      </GROUP>
+      <FILE id="Qu4V3t" name="icon.PNG" compile="0" resource="1" file="Source/icon.PNG"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <VS2019 targetFolder="Builds/VisualStudio2019" smallIcon="Qu4V3t" bigIcon="Qu4V3t">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="VA808BassDrum"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="VA808BassDrum"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../modules"/>
+        <MODULEPATH id="juce_core" path="../../modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../modules"/>
+        <MODULEPATH id="juce_events" path="../../modules"/>
+        <MODULEPATH id="juce_graphics" path="../../modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../modules"/>
+      </MODULEPATHS>
+    </VS2019>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <WINDOWS/>
+  </LIVE_SETTINGS>
+</JUCERPROJECT>

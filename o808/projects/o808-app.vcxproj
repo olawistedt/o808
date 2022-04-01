@@ -38,41 +38,41 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Tracer|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Tracer|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -302,6 +302,10 @@
     <ClInclude Include="..\..\iPlug2\IGraphics\Platforms\IGraphicsWin.h" />
     <ClInclude Include="..\..\iPlug2\IPlug\APP\IPlugAPP.h" />
     <ClInclude Include="..\..\iPlug2\IPlug\APP\IPlugAPP_host.h" />
+    <ClInclude Include="..\..\iPlug2\IPlug\Extras\Synth\ControlRamp.h" />
+    <ClInclude Include="..\..\iPlug2\IPlug\Extras\Synth\MidiSynth.h" />
+    <ClInclude Include="..\..\iPlug2\IPlug\Extras\Synth\SynthVoice.h" />
+    <ClInclude Include="..\..\iPlug2\IPlug\Extras\Synth\VoiceAllocator.h" />
     <ClInclude Include="..\..\iPlug2\IPlug\IPlugAPIBase.h" />
     <ClInclude Include="..\..\iPlug2\IPlug\IPlugConstants.h" />
     <ClInclude Include="..\..\iPlug2\IPlug\IPlugEditorDelegate.h" />
@@ -318,7 +322,20 @@
     <ClInclude Include="..\..\iPlug2\IPlug\IPlug_include_in_plug_hdr.h" />
     <ClInclude Include="..\..\iPlug2\IPlug\IPlug_include_in_plug_src.h" />
     <ClInclude Include="..\o808.h" />
+    <ClInclude Include="..\o808_DSP.h" />
     <ClInclude Include="..\resources\resource.h" />
+    <ClInclude Include="..\va808-bass-drum\Source\Overdrive.h" />
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\BridgedTComponents\FeedbackBufferInput.h" />
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\BridgedTComponents\PulseShaperInput.h" />
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\BridgedTComponents\RetriggeringPulseInput.h" />
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\BridgedTNetwork.h" />
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\FeedbackBuffer.h" />
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\LevelStage.h" />
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\OutputStage.h" />
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\PulseShaper.h" />
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\RetriggeringPulse.h" />
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\ToneStage.h" />
+    <ClInclude Include="..\va808-bass-drum\Source\VA808Components\TriggerLogic.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\iPlug2\Dependencies\IPlug\RTAudio\include\asio.cpp" />
@@ -354,6 +371,8 @@
     <ClCompile Include="..\..\iPlug2\IPlug\APP\IPlugAPP_dialog.cpp" />
     <ClCompile Include="..\..\iPlug2\IPlug\APP\IPlugAPP_host.cpp" />
     <ClCompile Include="..\..\iPlug2\IPlug\APP\IPlugAPP_main.cpp" />
+    <ClCompile Include="..\..\iPlug2\IPlug\Extras\Synth\MidiSynth.cpp" />
+    <ClCompile Include="..\..\iPlug2\IPlug\Extras\Synth\VoiceAllocator.cpp" />
     <ClCompile Include="..\..\iPlug2\IPlug\IPlugAPIBase.cpp" />
     <ClCompile Include="..\..\iPlug2\IPlug\IPlugParameter.cpp" />
     <ClCompile Include="..\..\iPlug2\IPlug\IPlugPaths.cpp" />
@@ -361,6 +380,16 @@
     <ClCompile Include="..\..\iPlug2\IPlug\IPlugProcessor.cpp" />
     <ClCompile Include="..\..\iPlug2\IPlug\IPlugTimer.cpp" />
     <ClCompile Include="..\o808.cpp" />
+    <ClCompile Include="..\va808-bass-drum\Source\Overdrive.cpp" />
+    <ClCompile Include="..\va808-bass-drum\Source\VA808BassDrum.cpp" />
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\BridgedTNetwork.cpp" />
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\FeedbackBuffer.cpp" />
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\LevelStage.cpp" />
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\OutputStage.cpp" />
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\PulseShaper.cpp" />
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\RetriggeringPulse.cpp" />
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\ToneStage.cpp" />
+    <ClCompile Include="..\va808-bass-drum\Source\VA808Components\TriggerLogic.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\resources\main.rc" />

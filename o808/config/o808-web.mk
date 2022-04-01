@@ -5,6 +5,18 @@ IPLUG2_ROOT = ../../iPlug2
 include ../../common-web.mk
 
 SRC += $(PROJECT_ROOT)/o808.cpp
+SRC += $(PROJECT_ROOT)/../iPlug2/IPlug/Extras/Synth/MidiSynth.cpp
+SRC += $(PROJECT_ROOT)/../iPlug2/IPlug/Extras/Synth/VoiceAllocator.cpp
+SRC += $(PROJECT_ROOT)/va808-bass-drum/Source/Overdrive.cpp
+SRC += $(PROJECT_ROOT)/va808-bass-drum/Source/VA808BassDrum.cpp
+SRC += $(PROJECT_ROOT)/va808-bass-drum/Source/VA808Components/BridgedTNetwork.cpp
+SRC += $(PROJECT_ROOT)/va808-bass-drum/Source/VA808Components/FeedbackBuffer.cpp
+SRC += $(PROJECT_ROOT)/va808-bass-drum/Source/VA808Components/LevelStage.cpp
+SRC += $(PROJECT_ROOT)/va808-bass-drum/Source/VA808Components/OutputStage.cpp
+SRC += $(PROJECT_ROOT)/va808-bass-drum/Source/VA808Components/PulseShaper.cpp
+SRC += $(PROJECT_ROOT)/va808-bass-drum/Source/VA808Components/RetriggeringPulse.cpp
+SRC += $(PROJECT_ROOT)/va808-bass-drum/Source/VA808Components/ToneStage.cpp
+SRC += $(PROJECT_ROOT)/va808-bass-drum/Source/VA808Components/TriggerLogic.cpp
 
 # WAM_SRC += 
 
