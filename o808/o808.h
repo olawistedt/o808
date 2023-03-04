@@ -91,5 +91,10 @@ private:
   ///// Smoothed value of the overdrive mix
   //juce::SmoothedValue<float> smoothedMix;
 
+
+protected:
+  IMidiQueue mMidiQueue;
+
+
 #endif
 };

@@ -15,11 +15,11 @@
 
 #define SHARED_RESOURCES_SUBPATH "o808"
 
-#define PLUG_CHANNEL_IO "2-2"
+#define PLUG_CHANNEL_IO "0-2"
 
 #define PLUG_LATENCY 0
 #define PLUG_TYPE 0
-#define PLUG_DOES_MIDI_IN 0
+#define PLUG_DOES_MIDI_IN 1
 #define PLUG_DOES_MIDI_OUT 0
 #define PLUG_DOES_MPE 0
 #define PLUG_DOES_STATE_CHUNKS 0
@@ -44,7 +44,7 @@
 #define AAX_TYPE_IDS_AUDIOSUITE 'ITA1'
 #define AAX_PLUG_MFR_STR "Acme"
 #define AAX_PLUG_NAME_STR "o808\nIPEF"
-#define AAX_PLUG_CATEGORY_STR "Effect"
+#define AAX_PLUG_CATEGORY_STR "Drums"
 #define AAX_DOES_AUDIOSUITE 1
 
 #define VST3_SUBCATEGORY "Instrument|Effect"

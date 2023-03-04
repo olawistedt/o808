@@ -3,7 +3,7 @@
 #include "LFO.h"
 
 o808::o808(const InstanceInfo& info)
-: Plugin(info, MakeConfig(kNumParams, kNumPresets))
+  : Plugin(info, MakeConfig(kNumParams, kNumPresets))
 {
   GetParam(k808Level)->InitDouble("Level", 0.5, 0.0, 1.0, 0.2);
   GetParam(k808Tone)->InitDouble("Tone", 0.8, 0.0, 1.0, 0.2);
@@ -16,13 +16,13 @@ o808::o808(const InstanceInfo& info)
   mMakeGraphicsFunc = [&]() {
     return MakeGraphics(*this, PLUG_WIDTH, PLUG_HEIGHT, PLUG_FPS, GetScaleForScreen(PLUG_WIDTH, PLUG_HEIGHT));
   };
-  
+
   mLayoutFunc = [&](IGraphics* pGraphics) {
     pGraphics->AttachCornerResizer(EUIResizerMode::Scale, false);
     pGraphics->AttachPanelBackground(COLOR_GRAY);
     pGraphics->EnableMouseOver(true);
     pGraphics->EnableMultiTouch(true);
-    
+
 #ifdef OS_WEB
     pGraphics->AttachPopupMenuControl();
 #endif
@@ -30,10 +30,10 @@ o808::o808(const InstanceInfo& info)
     pGraphics->LoadFont("Roboto-Regular", ROBOTO_FN);
     const IRECT b = pGraphics->GetBounds().GetPadded(-20.f);
     const IRECT controls = b.GetGridCell(1, 2, 2);
-    pGraphics->AttachControl(new IVKnobControl(controls.GetGridCell(0, 2, 6).GetCentredInside(90), k808Level,  "Level"));
-    pGraphics->AttachControl(new IVKnobControl(controls.GetGridCell(1, 2, 6).GetCentredInside(90), k808Tone,   "Tone"));
+    pGraphics->AttachControl(new IVKnobControl(controls.GetGridCell(0, 2, 6).GetCentredInside(90), k808Level, "Level"));
+    pGraphics->AttachControl(new IVKnobControl(controls.GetGridCell(1, 2, 6).GetCentredInside(90), k808Tone, "Tone"));
     pGraphics->AttachControl(new IVKnobControl(controls.GetGridCell(2, 2, 6).GetCentredInside(90), k808Tuning, "Tuning"));
-    pGraphics->AttachControl(new IVKnobControl(controls.GetGridCell(3, 2, 6).GetCentredInside(90), k808Decay,  "Decay"));
+    pGraphics->AttachControl(new IVKnobControl(controls.GetGridCell(3, 2, 6).GetCentredInside(90), k808Decay, "Decay"));
   };
 #endif
 }
@@ -60,40 +60,49 @@ void o808::ProcessBlock(sample** inputs, sample** outputs, int nFrames)
   {
     float v_out = bassDrum.process();
 
-  ////===========================================
-  ////APPLYING OVERDRIVE
+    ////===========================================
+    ////APPLYING OVERDRIVE
 
-  // updating the mix and gain variables from the smoothed values
-//  float overdriveMix = smoothedMix.getNextValue();
-//  float overdriveGain = smoothedGain.getNextValue();
+    // updating the mix and gain variables from the smoothed values
+  //  float overdriveMix = smoothedMix.getNextValue();
+  //  float overdriveGain = smoothedGain.getNextValue();
 
-  //// store the dry sample before overdive, reduce volume
-  float drySample = v_out * outputGain /*ola laggt till*/ * 0.05f;
+    //// store the dry sample before overdive, reduce volume
+    float drySample = v_out * outputGain /*ola laggt till*/ * 0.05f;
 
-  // get the overdriven sample
-//  float overdrivenSample = overdrive.process(v_out * outputGain * (1.f + overdriveGain * 4.0f));
+    // get the overdriven sample
+  //  float overdrivenSample = overdrive.process(v_out * outputGain * (1.f + overdriveGain * 4.0f));
 
-  //// mix between the two to get the current output sample
-  //float currentSample = (1.0f - overdriveMix) * drySample + overdriveMix * overdrivenSample;
+    //// mix between the two to get the current output sample
+    //float currentSample = (1.0f - overdriveMix) * drySample + overdriveMix * overdrivenSample;
 
-  ////===========================================
-  ////WRITING OUTPUT TO BUFFER
+    ////===========================================
+    ////WRITING OUTPUT TO BUFFER
 
-  //// for each channel, write the currentSample float to the output
-  //for (int chan = 0; chan < outputBuffer.getNumChannels(); chan++)
-  //{
-  //  // The output sample is scaled by 0.2 so that it is not too loud by default
-  //  outputBuffer.addSample(chan, sampleIndex, currentSample);
-  //}
+    //// for each channel, write the currentSample float to the output
+    //for (int chan = 0; chan < outputBuffer.getNumChannels(); chan++)
+    //{
+    //  // The output sample is scaled by 0.2 so that it is not too loud by default
+    //  outputBuffer.addSample(chan, sampleIndex, currentSample);
+    //}
 
-  mSamples++;
-  if (mSamples == 25000)
-  {
-    mSamples = 0;
-    float velocity = 100.0;
-    bassDrum.activate(velocity);
-  }
-    * out01++ = *out02++ = drySample;
+
+    while (!mMidiQueue.Empty())
+    {
+      IMidiMsg msg = mMidiQueue.Peek();
+      if (msg.StatusMsg() == IMidiMsg::kNoteOn)
+      {
+        int velocity = msg.Velocity();
+        int noteNr = msg.NoteNumber();
+        bassDrum.activate(velocity);
+      }
+      //else if (msg.StatusMsg() == IMidiMsg::kNoteOff)
+      //{
+      //  mSynth.NoteOff(msg.NoteNumber());
+      //}
+      mMidiQueue.Remove();
+    }
+    *out01++ = *out02++ = drySample;
   }
 }
 
@@ -118,33 +127,7 @@ void o808::OnReset()
 void o808::ProcessMidiMsg(const IMidiMsg& msg)
 {
   TRACE;
-  
-  int status = msg.StatusMsg();
-  
-  switch (status)
-  {
-    case IMidiMsg::kNoteOn:
-    {
-      // send a message to the bass drum class to start a hit of the bass drum, independant of MIDI note
-      float velocity = 100.0;
-      bassDrum.activate(velocity);
-    }
-    case IMidiMsg::kNoteOff:
-    case IMidiMsg::kPolyAftertouch:
-    case IMidiMsg::kControlChange:
-    case IMidiMsg::kProgramChange:
-    case IMidiMsg::kChannelAftertouch:
-    case IMidiMsg::kPitchWheel:
-    {
-      goto handle;
-    }
-    default:
-      return;
-  }
-  
-handle:
-  mDSP.ProcessMidiMsg(msg);
-  SendMidiMsg(msg);
+  mMidiQueue.Add(msg); // Take care of MIDI events in ProcessBlock()
 }
 
 #if IPLUG_DSP
@@ -152,12 +135,12 @@ void o808::OnParamChange(int paramIdx)
 {
   double value = GetParam(paramIdx)->Value();
 
-//  mDSP.SetParam(paramIdx, GetParam(paramIdx)->Value());
+  //  mDSP.SetParam(paramIdx, GetParam(paramIdx)->Value());
   if (paramIdx >= k808Level && paramIdx <= k808Gain)
   {
-    float level  = static_cast<float>(GetParam(k808Level)->Value());
-    float tone   = static_cast<float>(GetParam(k808Tone)->Value());
-    float decay  = static_cast<float>(GetParam(k808Decay)->Value());
+    float level = static_cast<float>(GetParam(k808Level)->Value());
+    float tone = static_cast<float>(GetParam(k808Tone)->Value());
+    float decay = static_cast<float>(GetParam(k808Decay)->Value());
     float tuning = static_cast<float>(GetParam(k808Tuning)->Value());
     //GetParam(k808Mix)->Value();
     //GetParam(k808Gain)->Value();
@@ -169,12 +152,12 @@ void o808::OnParamChange(int paramIdx)
 
 bool o808::OnMessage(int msgTag, int ctrlTag, int dataSize, const void* pData)
 {
-  if(ctrlTag == kCtrlTagBender && msgTag == IWheelControl::kMessageTagSetPitchBendRange)
+  if (ctrlTag == kCtrlTagBender && msgTag == IWheelControl::kMessageTagSetPitchBendRange)
   {
     const int bendRange = *static_cast<const int*>(pData);
     mDSP.mSynth.SetPitchBendRange(bendRange);
   }
-  
+
   return false;
 }
 #endif
